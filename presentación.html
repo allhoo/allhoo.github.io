@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/unipamplona.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<style>
+		  
+		 
+
+		</style>
+				
+
+		
+	</head>
+
+	<body>
+		<div class="slide-container">
+
+	    	<img src="logosUni/unipamplona_64.png" alt="Logo U. Pamplona" class="logo-superior">
+
+	        
+		    <div class="sellos-inferiores">
+		    	<img src="logosUni/logo_acreditacion.png" alt="Sello internacional">
+		      	<img src="logosUni/logo-equaa.png" alt="Sello calidad">
+		       	<img src="logosUni/sello.png" alt="Sello no discriminación">
+		    </div>
+
+		    <!-- Franja superior -->
+		    <div class="franja-superior">
+		      <div class="roja"></div>
+		    </div>
+
+		    <!-- Franja inferior -->
+		    <div class="franja-inferior">
+		      <div class="dorada"></div>
+		      <div class="roja"></div>
+		    </div>
+
+	  	</div>
+
+
+	  		
+		<div class="reveal">
+
+
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+									<!-- ################### -->
+									<!-- Primera diapositiva -->
+				<section>
+					<h2> diapositiva 1 </h2>
+					<a href="https://revealjs.com">
+						<img src="https://static.slid.es/reveal/logo-v1/reveal-white-text.svg" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+					</a>
+					<h3>The HTML Presentation Framework</h3>
+					<p>
+						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> and <a href="https://github.com/hakimel/reveal.js/graphs/contributors">contributors</a></small>
+					</p>
+				</section>
+
+
+									<!-- ################### -->
+									<!-- Segunda diapositiva -->
+
+
+				<section style="margin: 0; padding: 0;">
+					<h2> diapositiva 2 </h2>
+
+					<a href="index_GPX.html"> Recorrido GPX </a>		
+				</section>
+
+
+									<!-- ################### -->
+									<!-- Tercera diapositiva -->
+
+
+				<section>
+					<h2>Hello There</h2>
+					<p>
+						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
+					</p>
+				</section>
+
+									<!-- ################### -->
+									<!-- Cuarta diapositiva -->
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Vertical Slides</h2>
+						<p>Slides can be nested inside of each other.</p>
+						<p>Use the <em>Space</em> key to navigate through all slides.</p>
+						<br>
+						<a href="#/2/1" class="navigate-down">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section>
+						<h2>Basement Level 1</h2>
+						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+					</section>
+					<section>
+						<h2>Basement Level 2</h2>
+						<p>That's it, time to go back up.</p>
+						<br>
+						<a href="#/2">
+							<img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow">
+						</a>
+					</section>
+				</section>
+
+									<!-- ################### -->
+									<!-- Quinta diapositiva -->
+
+				<section>
+					<h2>Slides</h2>
+					<p>
+						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="https://slides.com" target="_blank">https://slides.com</a>.
+					</p>
+				</section>
+
+
+
+
+
+
+
+
+
+
+									<!-- ################### -->
+									<!-- Ultima diapositiva -->
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<p>
+						- <a href="https://slides.com">Try the online editor</a> <br>
+						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+					</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+		
+		
+		<script>
+    		document.addEventListener('DOMContentLoaded', function() {
+        		let slideIndex = 1;
+        		const sections = document.querySelectorAll('.reveal .slides > section');
+
+        		sections.forEach(section => {
+            	// Selecciona todas las subsecciones dentro de esta sección
+            		const subsections = section.querySelectorAll('section');
+
+            		if (subsections.length > 0) {
+                // Si hay subsecciones, numéralas individualmente
+                		subsections.forEach(subsection => {
+                    		const slideNumber = document.createElement('p');
+                    		slideNumber.textContent = `${slideIndex}`;
+                    		slideNumber.style.position = 'relative';
+                    		slideNumber.style.bottom = '-50%';
+                    		slideNumber.style.right = '-77%';
+                    		slideNumber.style.color = 'black';
+                    		subsection.appendChild(slideNumber);
+                    		slideIndex++;
+                		});
+            		} else {
+                		// Si no hay subsecciones, numera la sección principal
+                		const slideNumber = document.createElement('p');
+                		slideNumber.textContent = `${slideIndex}`;
+                		slideNumber.style.position = 'relative';
+                		slideNumber.style.bottom = '50%';
+                		slideNumber.style.right = '-77%';
+                		slideNumber.style.color = 'black';
+                		section.appendChild(slideNumber);
+                		slideIndex++;
+            		}
+        		});
+    		});
+		</script>
+	</body>
+</html>

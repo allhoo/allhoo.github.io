@@ -1,0 +1,255 @@
+/* ==============================
+   ESTILOS GENERALES
+============================== */
+body {
+    background-color: black;
+    font-family: 'Orbitron', monospace;
+    color: #00FF00;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    padding: 0;
+    z-index: 100;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100vh;
+    z-index: -100;
+    pointer-events: none;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-bottom: 4px solid #0F0;
+    text-align: center;
+}
+
+h1 {
+    color: #00FF00;
+    margin: 0;
+    font-size: 3em;
+    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 20px #00FF00;
+}
+
+h1:hover {
+    animation: glitch 0.5s infinite;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 1);
+    padding: 5px;
+    border-bottom: 2px solid #0F0;
+}
+
+nav a {
+    color: #39FF14;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+}
+
+nav a:hover {
+    color: #ffffff;
+    animation: glitch 0.5s infinite;
+}
+
+section {
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 80%;
+    margin: auto;
+    border: 5px solid #00FF00;
+    margin-top: 20px;
+}
+
+.section-title {
+    font-size: 2em;
+    color: #00FF00;
+    text-shadow: 0 0 10px #00FF00;
+    padding-bottom: 10px;
+}
+
+.section-title:hover {
+    animation: glitch 0.5s infinite;
+}
+
+/* ==============================
+   SECCIÓN INICIO
+============================== */
+.inicio-content {
+    margin: 20px;
+    text-align: justify;
+}
+
+.inicio-bienvenida {
+    font-size: 20px;
+}
+
+/* ==============================
+   SECCIÓN BIOGRAFÍA
+============================== */
+.biografia-content {
+    margin: 30px;
+    text-align: justify;
+}
+
+/* ==============================
+   SECCIÓN HABILIDADES
+============================== */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.skill {
+    background-color: rgba(0, 0, 0, 1);
+    border: 2px solid #0F0;
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    color: #00FF00;
+    box-shadow: 0 0 10px #0F0;
+    transition: transform 0.2s ease-in-out;
+}
+
+.skill:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #0F0;
+}
+
+.skill-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px #0F0;
+}
+
+.skill p,
+.skill a {
+    font-size: 1em;
+    text-shadow: 0 0 5px #0F0;
+}
+
+.skill a {
+    color: #39FF14;
+    text-decoration: none;
+}
+
+.skill a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+/* ==============================
+   SECCIÓN PROYECTOS
+============================== */
+.proyectos-links {
+    margin: 20px;
+    text-align: justify;
+}
+
+.proyectos-links ul {
+    list-style-type: none;
+    text-align: justify;
+}
+
+.proyectos-archivos {
+    margin: 20px;
+}
+
+.archivos-descripcion {
+    font-size: 20px;
+    text-align: justify;
+}
+
+.proyecto-titulo,
+.archivo-titulo {
+    color: yellowgreen;
+}
+
+#links a,
+#archivos a {
+    color: #00FF00;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#links a:hover,
+#archivos a:hover {
+    text-decoration: underline;
+    color: yellowgreen;
+}
+
+/* ==============================
+   SECCIÓN CONTACTO
+============================== */
+#contacto .content {
+    margin: 15px 0;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-top: 2px solid #0F0;
+    text-align: center;
+    color: #00FF00;
+}
+
+/* ==============================
+   BOTONES
+============================== */
+button {
+    background-color: rgba(0, 255, 0, 0.2);
+    color: #0F0;
+    border: 1px solid #00FF00;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgba(0, 255, 0, 0.4);
+}
+
+/* ==============================
+   IMÁGENES
+============================== */
+img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 3px solid #00FF00;
+}
+
+.certificate-img {
+    max-width: 80%;
+    border: 5px solid #0F0;
+    border-radius: 10px;
+    margin: 20px 0;
+    width: 450px;
+    height: 300px;
+}
+
+/* ==============================
+   ANIMACIONES
+============================== */
+@keyframes glitch {
+    0% { text-shadow: 2px 0 #0F0, -2px 0 #0F0; }
+    20% { text-shadow: -2px 2px #0F0, 2px -2px #0F0; }
+    40% { text-shadow: 2px -2px #0F0, -2px 2px #0F0; }
+    60% { text-shadow: 0 0 8px #0F0; }
+    80% { text-shadow: -2px -2px #0F0; }
+    100% { text-shadow: 2px 2px #0F0; }
+}
