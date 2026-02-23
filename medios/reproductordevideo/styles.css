@@ -1,0 +1,326 @@
+body {
+    background: url('fotor-ai-20240722224837.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    
+    font-family: 'Orbitron', sans-serif;
+    color: #1A1A40;
+    
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    z-index: 1; /* Aseguramos que el contenido del body esté por encima */
+}
+
+/* Filtro para la distorsión de la imagen */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 60%;
+    height: 100%;
+    background: inherit;
+    filter: contrast(200%) brightness(90%) hue-rotate(10deg);
+    mix-blend-mode: multiply;
+    animation: glitchBefore 13s infinite;
+    z-index: -10; /* Se coloca detrás del contenido del body */
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background: inherit;
+    filter: contrast(50%) brightness(10%) hue-rotate(-10deg);
+    mix-blend-mode: screen;
+    opacity: 0.5;
+    animation: glitchAfter 12.5s infinite;
+    z-index: -10; /* Se coloca detrás del contenido del body */
+}
+
+
+nav {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro semi-transparente */
+    border-bottom: 2px solid #FFFFFF;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+nav .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+nav .logo-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 24px;
+}
+
+nav ul li a:hover {
+    color: #00FFFF; /* Color cian para resaltar el enlace */
+}
+
+main {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);  /*Fondo negro semi-transparente para mejorar legibilidad */
+}
+
+h1 {
+    color: #00FFFF;
+    text-shadow: 0 0 15px #000000, 0 0 10px #000000;
+}
+
+video {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    border: 12px solid #FFFFFF;
+    /*box-shadow: 0 0 15px #FFFFFF;*/
+    display: block;
+}
+
+#contacto {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro semi-transparente */
+    border-top: 2px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+}
+
+#contacto h2 {
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF;
+}
+
+.contact-item {
+    margin: 10px 0;
+    color: #FFFFFF;
+    font-size: 18px;
+    animation: highlight 3s infinite alternate;
+}
+
+@keyframes highlight {
+    0% {
+        color: #00FFFF;
+    }
+    100% {
+        color: #FFFFFF; /* Color magenta para resaltar el contacto */
+    }
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro semi-transparente */
+    padding: 10px 0;
+    color: #FFFFFF;
+    font-size: 14px;
+    border-top: 2px solid #FFFFFF;
+}
+
+footer p {
+    margin: 0;
+}
+
+@keyframes glitchBefore {
+    0%, 100% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-20px, -10px);
+    }
+    40% {
+        transform: translate(10px, 10px);
+    }
+    60% {
+        transform: translate(-25px, 25px);
+    }
+    80% {
+        transform: translate(25px, -25px);
+    }
+}
+
+@keyframes glitchAfter {
+    0%, 100% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-15px, 5px);
+    }
+    40% {
+        transform: translate(10px, -10px);
+    }
+    60% {
+        transform: translate(5px, 10px);
+    }
+    80% {
+        transform: translate(-10px, -5px);
+    }
+}
+
+
+/* ========================= */
+/* LAYOUT PRINCIPAL */
+/* ========================= */
+
+.layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.content {
+    width: 60%;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 30px;
+    border: 2px solid #00FFFF;
+    box-shadow: 0 0 20px #000;
+}
+
+.ads {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ad-box {
+    background: rgba(0,0,0,0.8);
+    border: 2px solid #FFFFFF;
+    padding: 40px 10px;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+/* ========================= */
+/* RESEÑA */
+/* ========================= */
+
+.review {
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 2px solid #00FFFF;
+}
+
+.review h2 {
+    color: #00FFFF;
+}
+
+/* ========================= */
+/* COMENTARIOS */
+/* ========================= */
+
+.comments {
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 2px solid #00FFFF;
+}
+
+.comments h2 {
+    color: #00FFFF;
+}
+
+#commentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#commentForm input,
+#commentForm textarea {
+    padding: 10px;
+    background: #111;
+    border: 1px solid #00FFFF;
+    color: #FFF;
+}
+
+#commentForm button {
+    padding: 10px;
+    background: #00FFFF;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#commentForm button:hover {
+    background: #00cccc;
+}
+
+.comment-item {
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(255,255,255,0.05);
+    border-left: 3px solid #00FFFF;
+}
+@media (max-width: 1000px) {
+    .layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ads {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .content {
+        width: 100%;
+    }
+}
+
+
+.comment-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.like-btn, .delete-btn {
+    background: #111;
+    border: 1px solid #00FFFF;
+    color: #FFF;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.like-btn:hover {
+    background: #00FFFF;
+    color: #000;
+}
+
+.delete-btn:hover {
+    background: crimson;
+    border-color: crimson;
+}

@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-color: #0e0e0e; /* oscuro, no blanco */
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.bg {
+    position: fixed;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        url('http://assets.iceable.com/img/noise-transparent.png');
+
+    background-size: 3px 3px, auto;
+    animation: bg-move 8s linear infinite;
+    opacity: 0.6;
+}
+
+
+@keyframes bg-move {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-50px, -50px);
+    }
+}
+
+/* Layout general */
+.page {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    min-height: 100vh;
+}
+
+/* Publicidad */
+.ads {
+    background-color: rgba(255, 255, 255, 0.08);
+
+    padding: 10px;
+    text-align: center;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    height: 90%;
+}
+
+.ads img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Contenido principal */
+.content {
+    
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(4px);
+
+}
+
+/* Visor de memes */
+#meme-viewer {
+    max-width: 90%;
+    max-height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#meme-viewer img,
+#meme-viewer video {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+/* Indicador */
+#indicator {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page {
+        grid-template-columns: 1fr;
+    }
+
+    .ads {
+        display: none;
+    }
+}
