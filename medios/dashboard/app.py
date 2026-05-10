@@ -3,36 +3,52 @@ import pandas as pd
 import plotly.express as px
 from sklearn.linear_model import LinearRegression
 
-# ======================
-# CARGA DE DATOS
-# ======================
+# =====================
+# DATOS
+# =====================
 
-url = "https://raw.githubusercontent.com/USUARIO/REPO/main/resultados_Cacota_2010_2025_procesados.csv"
-df = pd.read_csv(url)
+@st.cache_data
+def cargar_datos():
 
-# ajustar fecha (cambia el nombre si es diferente)
-df["Fecha de Muestreo"] = pd.to_datetime(df["Fecha de Muestreo"])
+    url = "https://raw.githubusercontent.com/allhoo/allhoo.github.io/refs/heads/main/medios/dashboard/resultados_Cacota_2010_2025_procesados.csv"
 
-# ======================
-# INTERFAZ
-# ======================
+    df = pd.read_csv(url)
 
-st.title("Dashboard Calidad del Agua - IRCA")
+    df["Fecha de Muestreo"] = pd.to_datetime(
+        df["Fecha de Muestreo"]
+    )
+
+    return df
+
+df = cargar_datos()
+
+# =====================
+# MENU
+# =====================
+
+st.sidebar.title("Opciones")
 
 modo = st.sidebar.selectbox(
-    "Seleccionar módulo",
-    ["Series temporales", "Correlación", "Predicción"]
+    "Módulo",
+    [
+        "Series temporales",
+        "Correlación",
+        "Regresión múltiple"
+    ]
 )
 
-# ======================
-# 1. SERIES TEMPORALES
-# ======================
+# =====================
+# SERIES TEMPORALES
+# =====================
 
 if modo == "Series temporales":
 
     columnas = df.select_dtypes(include="number").columns
 
-    variable = st.selectbox("Variable", columnas)
+    variable = st.selectbox(
+        "Seleccionar variable",
+        columnas
+    )
 
     fig = px.line(
         df,
@@ -43,13 +59,13 @@ if modo == "Series temporales":
 
     st.plotly_chart(fig)
 
-# ======================
-# 2. CORRELACIÓN
-# ======================
+# =====================
+# CORRELACIÓN
+# =====================
 
 elif modo == "Correlación":
 
-    metodo = st.selectbox(
+    metodo = st.radio(
         "Método",
         ["pearson", "spearman"]
     )
@@ -60,38 +76,55 @@ elif modo == "Correlación":
 
     fig = px.imshow(
         corr,
-        text_auto=True,
-        title=f"Correlación ({metodo})"
+        text_auto=True
     )
 
     st.plotly_chart(fig)
 
-# ======================
-# 3. PREDICCIÓN IRCA
-# ======================
+    st.dataframe(corr)
 
-elif modo == "Predicción":
+# =====================
+# REGRESIÓN MÚLTIPLE
+# =====================
+
+elif modo == "Regresión múltiple":
 
     df_num = df.select_dtypes(include="number").dropna()
 
-    if "IRCA (%)" not in df_num.columns:
-        st.error("No se encontró la columna IRCA (%)")
-    else:
-        X = df_num.drop(columns=["IRCA (%)"])
-        y = df_num["IRCA (%)"]
+    objetivo = st.selectbox(
+        "Variable objetivo",
+        df_num.columns
+    )
+
+    predictoras = st.multiselect(
+        "Variables predictoras",
+        df_num.columns.drop(objetivo),
+        default=list(df_num.columns.drop(objetivo)[:3])
+    )
+
+    if len(predictoras) > 0:
+
+        X = df_num[predictoras]
+        y = df_num[objetivo]
 
         model = LinearRegression()
+
         model.fit(X, y)
 
         y_pred = model.predict(X)
 
+        st.write(
+            "R²:",
+            model.score(X, y)
+        )
+
         fig = px.scatter(
             x=y,
             y=y_pred,
-            labels={"x": "IRCA real", "y": "IRCA predicho"},
-            title="Modelo de regresión múltiple"
+            labels={
+                "x":"Real",
+                "y":"Predicho"
+            }
         )
 
         st.plotly_chart(fig)
-
-        st.write("R² del modelo:", model.score(X, y))
