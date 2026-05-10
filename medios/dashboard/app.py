@@ -89,42 +89,108 @@ elif modo == "Correlación":
 
 elif modo == "Regresión múltiple":
 
-    df_num = df.select_dtypes(include="number").dropna()
+    st.subheader("Modelo de regresión múltiple")
+
+    # =========================
+    # SOLO COLUMNAS NUMÉRICAS
+    # =========================
+
+    df_num = df.select_dtypes(include=["number"]).copy()
+
+    # =========================
+    # ELIMINAR COLUMNAS VACÍAS
+    # =========================
+
+    df_num = df_num.dropna(axis=1, how="all")
+
+    # =========================
+    # VARIABLE OBJETIVO
+    # =========================
 
     objetivo = st.selectbox(
         "Variable objetivo",
         df_num.columns
     )
 
+    # =========================
+    # VARIABLES PREDICTORAS
+    # =========================
+
     predictoras = st.multiselect(
         "Variables predictoras",
-        df_num.columns.drop(objetivo),
-        default=list(df_num.columns.drop(objetivo)[:3])
+        [c for c in df_num.columns if c != objetivo],
+        default=[c for c in df_num.columns if c != objetivo][:3]
     )
 
-    if len(predictoras) > 0:
+    # =========================
+    # VALIDACIÓN
+    # =========================
 
-        X = df_num[predictoras]
-        y = df_num[objetivo]
+    if len(predictoras) == 0:
 
-        model = LinearRegression()
+        st.warning("Seleccione al menos una variable predictora")
 
-        model.fit(X, y)
+    else:
 
-        y_pred = model.predict(X)
+        # =========================
+        # DATOS
+        # =========================
 
-        st.write(
-            "R²:",
-            model.score(X, y)
-        )
+        datos_modelo = df_num[predictoras + [objetivo]].dropna()
 
-        fig = px.scatter(
-            x=y,
-            y=y_pred,
-            labels={
-                "x":"Real",
-                "y":"Predicho"
-            }
-        )
+        X = datos_modelo[predictoras]
+        y = datos_modelo[objetivo]
 
-        st.plotly_chart(fig)
+        # =========================
+        # VALIDACIÓN EXTRA
+        # =========================
+
+        if len(X) < 2:
+
+            st.error("No hay suficientes datos válidos")
+
+        else:
+
+            # =========================
+            # MODELO
+            # =========================
+
+            model = LinearRegression()
+
+            model.fit(X, y)
+
+            y_pred = model.predict(X)
+
+            # =========================
+            # RESULTADOS
+            # =========================
+
+            st.write("R²:", round(model.score(X, y), 4))
+
+            resultados = pd.DataFrame({
+                "Real": y,
+                "Predicho": y_pred
+            })
+
+            fig = px.scatter(
+                resultados,
+                x="Real",
+                y="Predicho",
+                trendline="ols",
+                title="Valores reales vs predichos"
+            )
+
+            st.plotly_chart(fig)
+
+            # =========================
+            # COEFICIENTES
+            # =========================
+
+            coef = pd.DataFrame({
+                "Variable": predictoras,
+                "Coeficiente": model.coef_
+            })
+
+            st.dataframe(coef)
+
+     
