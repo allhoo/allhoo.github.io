@@ -43,9 +43,18 @@ def cargar_css():
             unsafe_allow_html=True
         )
 
+import os
 import json
 
-with open("data/config.json") as f:
+BASE_DIR = os.path.dirname(__file__)
+
+config_path = os.path.join(
+    BASE_DIR,
+    "data",
+    "config.json"
+)
+
+with open(config_path) as f:
 
     config = json.load(f)
 
