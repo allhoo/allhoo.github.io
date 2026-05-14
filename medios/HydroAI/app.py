@@ -11,7 +11,7 @@ from modules.prediccion import mostrar_prediccion
 from modules.analisis import mostrar_analisis
 from modules.alertas import mostrar_alertas
 from modules.reportes import mostrar_reportes
-#from modules.iot import mostrar_iot
+from modules.iot import mostrar_iot
 
 # ==========================================
 # CONFIGURACIÓN
@@ -72,8 +72,8 @@ modulo = st.sidebar.selectbox(
         "Predicción",
         "Análisis químico",
         "Alertas",
-        "Reportes"#,
-        #"IoT"
+        "Reportes",
+        "IoT"
     ]
 )
 
