@@ -43,7 +43,7 @@ def cargar_css():
             unsafe_allow_html=True
         )
 
-import os
+
 import json
 
 BASE_DIR = os.path.dirname(__file__)
@@ -76,10 +76,27 @@ df = cargar_datos()
 # ==========================================
 # SIDEBAR
 # ==========================================
-st.sidebar.image(
-    "assets/logo.png",
-    use_container_width=True
+
+BASE_DIR = os.path.dirname(__file__)
+
+logo_path = os.path.join(
+    BASE_DIR,
+    "assets",
+    "logo.png"
 )
+
+if os.path.exists(logo_path):
+
+    st.sidebar.image(
+        logo_path,
+        use_container_width=True
+    )
+
+else:
+
+    st.sidebar.warning(
+        f"No se encontró logo.png"
+    )
 
 st.sidebar.title("Sistema IRCA")
 
