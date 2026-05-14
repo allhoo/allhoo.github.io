@@ -22,16 +22,26 @@ st.set_page_config(
     layout="wide"
 )
 
+import os
+
 def cargar_css():
 
-    with open("assets/estilos.css") as f:
+    base_dir = os.path.dirname(__file__)
+
+    css_path = os.path.join(
+        base_dir,
+        "assets",
+        "estilos.css"
+    )
+
+    with open(css_path) as f:
 
         st.markdown(
+
             f"<style>{f.read()}</style>",
+
             unsafe_allow_html=True
         )
-
-cargar_css()
 
 import json
 
