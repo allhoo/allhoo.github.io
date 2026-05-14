@@ -1,0 +1,13 @@
+streamlit
+pandas
+numpy
+plotly
+scikit-learn
+statsmodels
+scipy
+pydeck
+reportlab
+openpyxl
+folium
+streamlit-folium
+matplotlib

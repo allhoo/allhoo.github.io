@@ -1,0 +1,33 @@
+{
+    "app": {
+        "nombre": "Dashboard IRCA",
+        "version": "1.0",
+        "autor": "Jose Alejandro Vera"
+    },
+
+    "mapa": {
+        "zoom": 13,
+        "latitud": 7.268,
+        "longitud": -72.643
+    },
+
+    "umbrales": {
+
+        "irca_max": 5,
+
+        "ph_min": 6.5,
+
+        "ph_max": 8.5,
+
+        "cloro_min": 0.3,
+
+        "turbidez_max": 2
+    },
+
+    "prediccion": {
+
+        "test_size": 0.2,
+
+        "random_state": 42
+    }
+}

@@ -1,0 +1,106 @@
+/* =========================================================
+   ESTILO GENERAL
+========================================================= */
+
+body {
+
+    background-color: #f5f7fa;
+
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* =========================================================
+   TITULOS
+========================================================= */
+
+h1, h2, h3 {
+
+    color: #0b5394;
+
+    font-weight: 700;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+section[data-testid="stSidebar"] {
+
+    background-color: #0b5394;
+
+    color: white;
+}
+
+/* =========================================================
+   MÉTRICAS KPI
+========================================================= */
+
+div[data-testid="metric-container"] {
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+
+    border-left: 5px solid #0b5394;
+}
+
+/* =========================================================
+   BOTONES
+========================================================= */
+
+.stButton > button {
+
+    border-radius: 10px;
+
+    background-color: #0b5394;
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 20px;
+
+    font-weight: bold;
+}
+
+.stButton > button:hover {
+
+    background-color: #073763;
+
+    color: white;
+}
+
+/* =========================================================
+   TABLAS
+========================================================= */
+
+thead tr th {
+
+    background-color: #0b5394 !important;
+
+    color: white !important;
+}
+
+/* =========================================================
+   ALERTAS
+========================================================= */
+
+.stAlert {
+
+    border-radius: 10px;
+}
+
+/* =========================================================
+   EXPANDERS
+========================================================= */
+
+.streamlit-expanderHeader {
+
+    font-weight: bold;
+
+    color: #0b5394;
+}
