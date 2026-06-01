@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="ChatGPT">
+  <wpt lat="7.271072" lon="-72.641945">
+    <name>Punto 1</name>
+    <desc>Imagen asociada: imagenes/punto1.jpg</desc>
+    <link href="imagenes/punto1.jpg">
+      <text>Ver imagen</text>
+    </link>
+  </wpt>
+  <wpt lat="7.265815" lon="-72.640173">
+    <name>Punto 2</name>
+    <desc>Imagen asociada: imagenes/punto2.jpg</desc>
+    <link href="imagenes/punto2.jpg">
+      <text>Ver imagen</text>
+    </link>
+  </wpt>
+  <wpt lat="7.264428" lon="-72.641356">
+    <name>Punto 3</name>
+    <desc>Imagen asociada: imagenes/punto3.jpg</desc>
+    <link href="imagenes/punto3.jpg">
+      <text>Ver imagen</text>
+    </link>
+  </wpt>
+  <wpt lat="7.268928" lon="-72.644627">
+    <name>Punto 4</name>
+    <desc>Imagen asociada: imagenes/punto4.jpg</desc>
+    <link href="imagenes/punto4.jpg">
+      <text>Ver imagen</text>
+    </link>
+  </wpt>
+  <wpt lat="7.271794" lon="-72.64636">
+    <name>Punto 5</name>
+    <desc>Imagen asociada: imagenes/punto5.jpg</desc>
+    <link href="imagenes/punto5.jpg">
+      <text>Ver imagen</text>
+    </link>
+  </wpt>
+  <wpt lat="7.274166" lon="-72.641787">
+    <name>Planta de Tratamiento</name>
+    <desc>Imagen asociada: imagenes/planta.jpg</desc>
+    <link href="imagenes/planta.jpg">
+      <text>Ver imagen</text>
+    </link>
+  </wpt>
+</gpx>
