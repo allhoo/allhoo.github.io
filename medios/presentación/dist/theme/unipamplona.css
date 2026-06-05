@@ -542,13 +542,16 @@ section.has-light-background, section.has-light-background h1, section.has-light
     color: #c59d2f;
 }
 
-.img-lateral{
-    position: relative;
-    
-    z-index: -10;
-
-
+/* Estilo base para las imágenes laterales */
+.img-lateral {
+  position: absolute;
+  
+  
+  
+  cursor: pointer; /* Muestra la mano para indicar que es clickeable */
+  transition: opacity 0.3s ease-in-out; /* Suaviza el cambio al hacer clic */
 }
+
 
 
 /* Animacion IRCA */
@@ -594,3 +597,6 @@ section.has-light-background, section.has-light-background h1, section.has-light
         visibility: visible;
     }
 }
+
+
+
