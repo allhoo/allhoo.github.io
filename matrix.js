@@ -4,8 +4,8 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const letters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqlsturvxyz";
-const fontSize = 12;
+const letters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqlsturvxyz!#$%&/()=?@^~*-+";
+const fontSize = 11;
 const columns = Math.floor(canvas.width / fontSize);
 const drops = Array(columns).fill(0);
 
