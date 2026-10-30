@@ -99,6 +99,9 @@ section {
     text-align: justify;
 }
 
+
+
+
 /* ==============================
    SECCIÓN HABILIDADES
 ============================== */
@@ -107,7 +110,10 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
+    margin:auto ;
+
     margin-bottom: 30px;
+    width: 90%;
 }
 
 .skill {
@@ -115,7 +121,7 @@ section {
     border: 2px solid #0F0;
     border-radius: 10px;
     padding: 15px;
-    width: 200px;
+    
     text-align: center;
     color: #00FF00;
     box-shadow: 0 0 10px #0F0;
@@ -152,43 +158,80 @@ section {
 /* ==============================
    SECCIÓN PROYECTOS
 ============================== */
+
+#proyectos {
+    box-sizing: border-box;
+    width: 90%;
+    padding: 10px; /* Evita que el contenido toque los bordes físicos de la pantalla */
+    overflow-x: hidden; /* Asegura que nada genere scroll horizontal */
+}
+
 .proyectos-links {
-    margin: 20px;
+    margin: auto;
     text-align: justify;
 }
 
-.proyectos-links ul {
+/* Aplicado a todas las listas del contenedor */
+#proyectos ul {
     list-style-type: none;
     text-align: justify;
+    padding-left: 0; /* Quita el espacio por defecto de las listas que causa desbordamiento */
+    margin: 0 0 20px 0;
 }
 
-.proyectos-archivos {
-    margin: 20px;
+#proyectos li {
+    margin-bottom: 15px; /* Separa los proyectos para que sea fácil tocarlos en el celular */
+    word-break: break-word; /* Rompe enlaces o palabras larguísimas si no caben */
 }
 
-.archivos-descripcion {
-    font-size: 20px;
-    text-align: justify;
-}
-
-.proyecto-titulo,
-.archivo-titulo {
-    color: yellowgreen;
-}
-
-#links a,
-#archivos a {
+#links a, #archivos a {
     color: #00FF00;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
+    display: inline-block; /* Permite que el texto fluya y use correctamente el espacio */
+    max-width: 100%; /* No permite que el enlace sea más ancho que su contenedor */
+    word-wrap: break-word; /* Compatibilidad para ajustar texto largo */
 }
 
-#links a:hover,
-#archivos a:hover {
+#links a:hover, #archivos a:hover {
     text-decoration: underline;
     color: yellowgreen;
 }
+
+/* Contenedores de archivos y páginas adaptables */
+#archivos, #pagina {
+    margin: 20px 0 !important; /* Margen arriba y abajo, 0 a los lados para evitar desbordes */
+    padding: 0;
+}
+
+#archivos p {
+    font-size: 18px; /* Ligeramente menor para pantallas pequeñas */
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/* Diseño responsivo para las tarjetas de Páginas (Skills) */
+#pagina {
+    display: flex;
+    flex-wrap: wrap;       /* Hace que las tarjetas bajen si no caben en pantallas chicas */
+    justify-content: center; /* CENTRA LAS TARJETAS HORIZONTALMENTE */
+    align-items: center;   /* Centra los elementos verticalmente (si tienen alturas distintas) */
+    gap: 20px;             /* Añade una separación uniforme entre cada tarjeta */
+    margin: 20px auto;     /* Centra el contenedor completo respecto a la página */
+    max-width: 1200px;     /* Opcional: evita que en pantallas gigantes se estire demasiado */
+    width: 100%;           /* Ocupa el ancho disponible */
+    box-sizing: border-box;
+}
+
+/* Opcional: Si también quieres centrar los TEXTOS que están DENTRO de cada tarjeta */
+.skill {
+    text-align: center;    /* Centra títulos, textos y enlaces dentro de la cajita */
+    flex: 1 1 280px;       /* Ancho responsivo mínimo de 280px */
+    max-width: 350px;      /* Opcional: evita que la tarjeta se vuelva gigante en monitores grandes */
+}
+
+
 
 /* ==============================
    SECCIÓN CONTACTO
