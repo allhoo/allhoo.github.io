@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>José Alejandro Vera - Página Personal</title>
     <link rel="stylesheet" href="styles.css">
+
+    <link rel="icon" type="image/jpg" href="archivos/Alejandro Vera.jpg">
+
 </head>
 <body>
     <canvas id="matrixCanvas"></canvas>
@@ -196,6 +199,23 @@
     </footer>
     <script src="scripts.js"></script>
     <script src="matrix.js"></script>
+
+    
+    <script>
+      // Guarda el título original agregando unos espacios al final para separarlo
+      let txt = document.title + "    "; 
+      
+      function moverTitulo() {
+        // Toma la primera letra y la pasa al final para simular el movimiento
+        txt = txt.substring(1, txt.length) + txt.substring(0, 1);
+        document.title = txt;
+        // Controla la velocidad (140 milisegundos por cada movimiento)
+        setTimeout(moverTitulo, 140); 
+      }
+      
+      // Inicia la animación cuando carga la página
+      moverTitulo();
+    </script>
 </body>
 </html>
 
